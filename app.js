@@ -15,12 +15,22 @@ io.on('connection',function(socket){
     })
 
     socket.on('mesgParaServidor',function(data){
+
         socket.emit(
             'msgParaCliente',{apelido: data.apelido,msg:data.msg}
         )
         socket.broadcast.emit(
             'msgParaCliente',{apelido: data.apelido,msg:data.msg}
         )
+        
+        if(parseInt(data.apelido_atualizado_nos_clientes) == 0){
+            socket.emit(
+                'participantesParaCliente',{apelido: data.apelido}
+            )
+            socket.broadcast.emit(
+                'participantesParaCliente',{apelido: data.apelido}
+            )
+        }
     })
 
 

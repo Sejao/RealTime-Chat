@@ -72,7 +72,8 @@ img {
 
 .participante{
 	display:block;
-	margin-bottom:15px;
+    margin-bottom:15px;
+    color: #FFF;
 }
 
 .participante img{

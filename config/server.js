@@ -5,6 +5,9 @@ var expressValidator = require('express-validator');
 
 var app = express();
 
+var cors = require('cors');
+app.use(cors());
+
 app.set('view engine','ejs');
 app.set('views','./app/views');
 app.use(express.static('./app/public'));
